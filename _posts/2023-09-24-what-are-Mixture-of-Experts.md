@@ -1,15 +1,9 @@
 ---
 layout: post
-title: Hello World!
-categories: [first_post]
+title: What are Mixture of Experts in the context of LLMs?
+categories: [mixture-of-experts]
 ---
 
-Hi!
-
-This is my first post! I know it might not seem more than the Lorem Ipsum that often marks up pages like these before people fill it up their pages with content. But to me this is something more, something symbolic. With these words, I hope to break ground on building a habit of documenting what I learn each day, thus preserving it for posterity.
-
-
-So, without further ado, Systems for Machine Learning, ladies and gentlemen. :)
 
 
 

@@ -1,10 +1,22 @@
 ---
 layout: post
-title: Introducing Reverie - A ridiculously elegant Jekyll theme
-categories: [Miscellaneous, Jekyll]
+title: Hello World!
+categories: [first_post]
 ---
 
-[Reverie](https://github.com/amitmerchant1990/reverie) is a [Jekyll](https://jekyllrb.com/)-powered theme which is simple and opinionated. It's actually a fork of [jekyll-now](https://github.com/barryclark/jekyll-now) with some additional features and personal touches which I've implemented to suit my needs for my blog.
+Hi!
+
+This marks my first post! I know it's a glorified placeholder and to most it might not seem more than the Lorem Ipsum that often marks up pages before people actually put in the effort to fill up their pages with content but to me it's something symbolic. With these words, I hope to break ground on building a habit of documenting what I learn each day, so that I can preserve it for longer
+
+I'm a very fortunate person. I've been blessed with incredible opportunities so far in my career. Research is a job, where people PAY YOU to learn new things. And I love what I'm getting to learn right now. 
+
+So, hopefully, after this post, you'll be greeted by a slew of blogs on Systems for Machine Learning. :)
+
+
+
+
+
+<!-- [Reverie](https://github.com/amitmerchant1990/reverie) is a [Jekyll](https://jekyllrb.com/)-powered theme which is simple and opinionated. It's actually a fork of [jekyll-now](https://github.com/barryclark/jekyll-now) with some additional features and personal touches which I've implemented to suit my needs for my blog.
 
 This is a plug-and-play Jekyll theme which you can use on GitHub Pages without even setting up a local environment.
 
@@ -84,4 +96,4 @@ The generated sitemap of your blog can be found at <https://yourgithubusername.g
 
 MIT
 
-
+ -->

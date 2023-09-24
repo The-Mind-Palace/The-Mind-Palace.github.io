@@ -30,7 +30,7 @@ Learn more about it [here](https://github.com/amitmerchant1990/reverie) on how t
 
 <div align="center">
   <br>
-  <img src="/images/Ramya.png" alt="that was supposed to be me" width="200"/>
+  <img src="/images/Ramya.png" alt="that was supposed to be me" width="600"/>
   <br>  
   <p align="center">
 

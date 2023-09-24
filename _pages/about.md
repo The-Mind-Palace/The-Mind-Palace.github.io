@@ -37,7 +37,7 @@ Learn more about it [here](https://github.com/amitmerchant1990/reverie) on how t
 
   Hi! I'm Ramya Prabhu. I'm a pre-doctoral research fellow at Microsoft Research India. Previously, I was a research intern at Intel Labs. I really like systems. And I want to learn more about them. 
 
-  I'm currently working on systems for ML. Previoussly, I've worked on computer architecture.
+  I'm currently working on systems for ML. Previously, I've worked on computer architecture.
 
   I graduated from PES University, Bengaluru in 2023 with a BTech in Computer Science. 
 

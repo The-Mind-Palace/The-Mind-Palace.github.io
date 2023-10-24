@@ -102,7 +102,7 @@ CUDA provides two mechanisms for updating instantiated graph parameters, whole g
 
 However, there are some limitations to how certain graph nodes can and cannot be updated. For more details, please check out [this link](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#cuda-graphs), it is a fantastice resource.
 
-## Device Graph Requirements
+## Device Graph Requirements
 
 **General requirements:**
 
@@ -187,5 +187,5 @@ Once captured, the graph may be replayed on any stream.
 
     [6]  https://pytorch.org/blog/accelerating-pytorch-with-cuda-graphs/
 
-    [7]
+    [7] https://pytorch.org/docs/master/notes/cuda.html#cuda-graphs
 

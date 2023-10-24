@@ -8,7 +8,7 @@ With advancements in GPU hardware and software, CPU overhead in launching CUDA k
 
 And while there are a few solutions to this bottleneck, this post is about CUDA Graphs.
 
-### Table 
+<b> Table of Contents </b>
 
 
 ## Why do I need this?
@@ -32,11 +32,11 @@ The operations in the nodes can be:
 
 
 
-> ### References
-> [1]  https://developer.nvidia.com/blog/cuda-10-features-revealed/
->
-> [2]  https://developer.nvidia.com/blog/cuda-graphs/
->
-> [3]  
+>>> ### References
+>>> [1]  https://developer.nvidia.com/blog/cuda-10-features-revealed/
+>>>
+>>> [2]  https://developer.nvidia.com/blog/cuda-graphs/
+>>>
+>>> [3]  
 
 

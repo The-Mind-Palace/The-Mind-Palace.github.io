@@ -22,6 +22,7 @@ CUDA Graphs give you a new manner of submitting your kernels using cuda.
 CUDA operations form the nodes of a graph, with the edges being the dependencies between the operations. All CUDA work essentially forms a graph. This is realised by this data  abstraction.
 
 ![Fig 1: How CUDA Graphs are able to capture the workstreams' workflow](../images/image_1_intro_to_CUDA.png)
+*Fig 1: How CUDA Graphs are able to capture the workstreams' workflow*
 
 
 The operations in the nodes can be:
@@ -32,11 +33,14 @@ The operations in the nodes can be:
 
 
 
->>> ### References
->>> [1]  https://developer.nvidia.com/blog/cuda-10-features-revealed/
->>>
->>> [2]  https://developer.nvidia.com/blog/cuda-graphs/
->>>
->>> [3]  
-
+> ### References
+> [1]  https://developer.nvidia.com/blog/cuda-10-features-revealed/
+>
+> [2]  https://developer.nvidia.com/blog/cuda-graphs/
+>
+> [3]  
+>
+> [4]  https://developer.nvidia.com/blog/cuda-graphs/
+>
+> [5]  
 

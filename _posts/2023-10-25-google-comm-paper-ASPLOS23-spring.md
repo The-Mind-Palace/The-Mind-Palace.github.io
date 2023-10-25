@@ -52,20 +52,20 @@ Usually, usually the AllGather(y) X 2 is not required. Einsum here is just to im
  
 ### Communication Primitive 
 
-	• AllGather has a many-to-many communication pattern that each logical device partition receives data from all of the partitions and concatenate them based on the data Partition IDs. It is mostly applied to replicate data along partitioned dimensions
-	A good way to understand this is:
-	
-	![Alt text](../images/google_comm_paper_ASPLOS23/image-3.png)
+• AllGather has a many-to-many communication pattern that each logical device partition receives data from all of the partitions and concatenate them based on the data Partition IDs. It is mostly applied to replicate data along partitioned dimensions
+A good way to understand this is:
 
-	• Reduce Scatter  has a reverse communication pattern of AllGather. Each logical device partition performs element-wise reduction over the received data partitions with the same Partition ID.
+![Alt text](../images/google_comm_paper_ASPLOS23/image-3.png)
 
-	• AllReduce can be considered as a ReduceScatter followed by an AllGather. After the operation, each logical device partition has the same tensor value from element-wise reduction over all of the data inputs, each of which comes from a different logical device partition. 
-	
+• Reduce Scatter  has a reverse communication pattern of AllGather. Each logical device partition performs element-wise reduction over the received data partitions with the same Partition ID.
+
+• AllReduce can be considered as a ReduceScatter followed by an AllGather. After the operation, each logical device partition has the same tensor value from element-wise reduction over all of the data inputs, each of which comes from a different logical device partition. 
+
 ![Alt text](../images/google_comm_paper_ASPLOS23/image-4.png)
 
 [why Reduce Scatter + All Gather and not reduce + broadcast?. After a reduce, only one GPU [the root] has all the data. No einsum can start on the other ranks until the broadcast in which case the GPU is idle and there is no overlap to be had]
 
-##  
+##  What does deconstructed communication workflow look like?
 
 ![Alt text](../images/google_comm_paper_ASPLOS23/image-5.png)
 

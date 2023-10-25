@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A Summary 'Overlap Communication with Dependent Computation via Decomposition in Large Deep Learning Models'
+title: Summary - 'Overlap Communication with Dependent Computation via Decomposition in Large Deep Learning Models'
 categories: [compute-communication-optimisation, inference, distributed-inference, paper-summaries]
 ---
 

@@ -94,13 +94,13 @@ What happens to the compute time?
 
 ### Some Resources
 
-1. [Overlap Communication with Dependent Computation via Decomposition in Large Deep Learning Models | Proceedings of the 28th ACM International Conference on Architectural Support for Programming Languages and Operating Systems, Volume 1](https://dl.acm.org/doi/pdf/10.1145/3567955.3567959)
+1. [Overlap Communication with Dependent Computation via Decomposition in Large Deep Learning Models, Proceedings of the 28th ACM International Conference on Architectural Support for Programming Languages and Operating Systems, Volume 1](https://dl.acm.org/doi/pdf/10.1145/3567955.3567959)
    
 2. [Lightening Talk at ASPLOS23](https://youtu.be/38TcJ9WE6vU)
 
 ## References
 
-[1]  [Overlap Communication with Dependent Computation via Decomposition in Large Deep Learning Models | Proceedings of the 28th ACM International Conference on Architectural Support for Programming Languages and Operating Systems, Volume 1](https://dl.acm.org/doi/pdf/10.1145/3567955.3567959)
+[1]  [Overlap Communication with Dependent Computation via Decomposition in Large Deep Learning Models, Proceedings of the 28th ACM International Conference on Architectural Support for Programming Languages and Operating Systems, Volume 1](https://dl.acm.org/doi/pdf/10.1145/3567955.3567959)
 
 [2]  [mpi - Difference between MPI_Allgather and MPI_Alltoall functions? - Stack Overflow](https://stackoverflow.com/questions/15049190/difference-between-mpi-allgather-and-mpi-alltoall-functions)
 

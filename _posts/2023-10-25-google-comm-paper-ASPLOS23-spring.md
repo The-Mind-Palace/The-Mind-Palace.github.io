@@ -1,13 +1,12 @@
 ---
 layout: post
-title: Summary: Overlap Communication with Dependent Computation via Decomposition in Large Deep Learning Models
-categories: [compute-communication-optimisation, inference, distributed-inference]
+title: **A Summary** Overlap Communication with Dependent Computation via Decomposition in Large Deep Learning Models
+categories: [compute-communication-optimisation, inference, distributed-inference, paper-summaries]
 ---
 
- 
-## One line summary
 
-Overlap dependent communications and computations by starting compute on the half of compute inpute that has already been communicated
+
+***Basic Idea***  Overlap dependent communications and computations by starting compute on the half of compute inpute that has already been communicated
 
 ## Motivation
 
@@ -70,7 +69,7 @@ Usually, usually the AllGather(y) X 2 is not required. Einsum here is just to im
 
 ![Alt text](../images/google_comm_paper_ASPLOS23/image-5.png)
 
-Similarlly,
+Similarly,
 
 ![Alt text](../images/google_comm_paper_ASPLOS23/image-6.png)
 

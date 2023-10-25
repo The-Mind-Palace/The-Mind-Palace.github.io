@@ -92,13 +92,13 @@ But what is the overhead of overlapping communication and compute?
 
 What happens to the compute time?
 
-### Some Resources:
+### Some Resources
 
 1. [Overlap Communication with Dependent Computation via Decomposition in Large Deep Learning Models | Proceedings of the 28th ACM International Conference on Architectural Support for Programming Languages and Operating Systems, Volume 1](https://dl.acm.org/doi/pdf/10.1145/3567955.3567959)
    
 2. [Lightening Talk at ASPLOS23](https://youtu.be/38TcJ9WE6vU)
 
-## References:
+## References
 
 [1]  [Overlap Communication with Dependent Computation via Decomposition in Large Deep Learning Models | Proceedings of the 28th ACM International Conference on Architectural Support for Programming Languages and Operating Systems, Volume 1](https://dl.acm.org/doi/pdf/10.1145/3567955.3567959)
 

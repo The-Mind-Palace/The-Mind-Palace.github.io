@@ -90,7 +90,7 @@ But what is the overhead of overlapping communication and compute?
 
 ![Alt text](../images/google_comm_paper_ASPLOS23/image-7.png)
 
-What happens to the compute time?
+What happens to the compute time? Don't know, TBD
 
 ### Some Resources
 

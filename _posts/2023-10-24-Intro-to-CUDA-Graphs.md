@@ -175,17 +175,17 @@ Once captured, the graph may be replayed on any stream.
 
 ## References
 
-    [1]  https://developer.nvidia.com/blog/cuda-10-features-revealed/
+[1]  https://developer.nvidia.com/blog/cuda-10-features-revealed/
 
-    [2]  https://developer.nvidia.com/blog/cuda-graphs/
+[2]  https://developer.nvidia.com/blog/cuda-graphs/
 
-    [3]  https://www.olcf.ornl.gov/wp-content/uploads/2021/10/013_CUDA_Graphs.pdf
+[3]  https://www.olcf.ornl.gov/wp-content/uploads/2021/10/013_CUDA_Graphs.pdf
 
-    [4]  https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#graph-structure
+[4]  https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#graph-structure
 
-    [5]  https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/usage/cudagraph.html
+[5]  https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/usage/cudagraph.html
 
-    [6]  https://pytorch.org/blog/accelerating-pytorch-with-cuda-graphs/
+[6]  https://pytorch.org/blog/accelerating-pytorch-with-cuda-graphs/
 
-    [7] https://pytorch.org/docs/master/notes/cuda.html#cuda-graphs
+[7] https://pytorch.org/docs/master/notes/cuda.html#cuda-graphs
 

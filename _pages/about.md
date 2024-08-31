@@ -6,7 +6,7 @@ permalink: /
 
 profile:
   align: right
-  image: baharan.jpg
+  image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   address: >
     <p>Engineering VI - 397B</p>
@@ -20,12 +20,10 @@ news: true  # includes a list of news items
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am an Assistant Professor in the [Computer Science Department](https://www.cs.ucla.edu/) at [UCLA](https://www.ucla.edu/), where I lead the [BigML](http://web.cs.ucla.edu/~baharan/research.htm) research group.
+I am a Pre-doctoral Research Fellow at [Microsoft Research, India](https://www.microsoft.com/en-us/research/lab/microsoft-research-india/) with the [AI Infrastructure](https://www.microsoft.com/en-us/research/project/ai-infrastructure/) team
                     
-My research aims to address [sustainability, reliability, and efficiency](https://baharanm.github.io/projects/) of machine learning. I am mainly working on improving the <b>big data quality</b>, by developing theoretically rigorous methods to select the most beneficial data for [efficient](projects/#efficiency) and [robust](projects/#robustness) learning. Besides, I am also interested in improving the models and learning algorithms. The resulting methods are broadly applicable for learning from massive datasets across a wide range of applications, such as medical diagnosis and environment sensing.
-
-<!-- My research focuses on developing new methods that enable efficient machine learning from massive datasets. More specifically, I am interested in designing techniques that can gain insights from the underlying data structure by utilizing complex and higher-order interactions between data points. The extracted information can be used to efficiently explore and robustly learn from datasets that are too large to be dealt with by traditional approaches. My methods have immediate application to high-impact problems where massive data volumes prohibit efficient learning and inference, such as huge image collections, recommender systems, Web and social services, video and other large data streams. -->
+My research interests lie in improving the efficiency of compute systems stack at all levels [hardware, software, scheduling, OS, etc] . My current work is focused on building efficient and robust systems for ML inference, specifically LLMs. 
 
 
-Before joining UCLA, I was a postdoctoral research fellow in Computer Science at [Stanford University](https://www.cs.ucla.edu/) working with [Jure Leskovec](https://cs.stanford.edu/people/jure/). I received my Ph.D. in Computer Science from [ETH Zurich](https://ethz.ch/en.html) advised by [Andreas Krause](https://las.inf.ethz.ch/krausea/). I received an [ETH medal for Outstanding Doctoral Thesis](https://ethz.ch/content/dam/ethz/main/eth-zurich/education/auszeichnungen-preise/files/eth-medaille/medaille-doktorarbeit-2017.pdf), was selected as a [Rising Star in EECS by MIT](https://risingstars18-eecs.mit.edu/participant-mirzasoleiman/), and received an [NSF Career Award](https://samueli.ucla.edu/ucla-computer-scientist-receives-nsf-career-award-to-improve-sustainability-in-machine-learning/). <br /><br />
+Before joining MSRI, I was a research intern at the PAR Lab at [Intel Labs, Bengaluru](https://www.intel.com/content/www/us/en/research/overview.html) working with [Sreenivas Subramoney](https://www.linkedin.com/in/sreenivas-subramoney-6564521/?originalSubdomain=in) and [Anant Nori](https://www.linkedin.com/in/anant-nori-97a491152/?originalSubdomain=in). I also worked as a Research Intern at [IIT Bombay's](https://www.iitb.ac.in/) [CASPER Lab](https://casper-iitb.github.io/) with [Biswabandan Panda](https://www.cse.iitb.ac.in/~biswa/) as a Google Explore CS Research Scholar. <br /><br />
 

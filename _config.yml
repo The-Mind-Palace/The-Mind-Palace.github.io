@@ -270,8 +270,8 @@ display_tags: ['Systems', 'Systems-for-ML'] # these tags will be displayed on th
 
 scholar:
 
-  last_name: [Prabhu__]
-  first_name: [Ramya, N.]
+  last_name: [Prabhu]
+  first_name: [Ramya, R.]
 
   style: apa
   locale: en

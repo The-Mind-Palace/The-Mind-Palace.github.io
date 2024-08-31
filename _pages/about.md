@@ -20,10 +20,11 @@ news: true  # includes a list of news items
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am a Pre-doctoral Research Fellow at [Microsoft Research, India](https://www.microsoft.com/en-us/research/lab/microsoft-research-india/) with the [AI Infrastructure](https://www.microsoft.com/en-us/research/project/ai-infrastructure/) team
+I am a Pre-doctoral Research Fellow at [Microsoft Research, India](https://www.microsoft.com/en-us/research/lab/microsoft-research-india/) in the [AI Infrastructure](https://www.microsoft.com/en-us/research/project/ai-infrastructure/) team with [Dr.Ramachandran Ramjee](https://www.microsoft.com/en-us/research/people/ramjee/), [Dr. Ashish Panwar](https://www.microsoft.com/en-us/research/people/ashishpanwar/) and [Dr. Jayashree Mohan](https://www.microsoft.com/en-us/research/people/jamohan/).
                     
 My research interests lie in improving the efficiency of compute systems stack at all levels [hardware, software, scheduling, OS, etc] . My current work is focused on building efficient and robust systems for ML inference, specifically LLMs. 
 
 
-Before joining MSRI, I was a research intern at the PAR Lab at [Intel Labs, Bengaluru](https://www.intel.com/content/www/us/en/research/overview.html) working with [Sreenivas Subramoney](https://www.linkedin.com/in/sreenivas-subramoney-6564521/?originalSubdomain=in) and [Anant Nori](https://www.linkedin.com/in/anant-nori-97a491152/?originalSubdomain=in). I also worked as a Research Intern at [IIT Bombay's](https://www.iitb.ac.in/) [CASPER Lab](https://casper-iitb.github.io/) with [Biswabandan Panda](https://www.cse.iitb.ac.in/~biswa/) as a Google Explore CS Research Scholar. <br /><br />
+Before joining MSRI, I was a research intern at the PAR Lab at [Intel Labs, Bengaluru](https://www.intel.com/content/www/us/en/research/overview.html) working with [Sreenivas Subramoney](https://www.linkedin.com/in/sreenivas-subramoney-6564521/?originalSubdomain=in) and [Anant Nori](https://www.linkedin.com/in/anant-nori-97a491152/?originalSubdomain=in). I also worked as a Research Intern at [IIT Bombay's](https://www.iitb.ac.in/) [CASPER Lab](https://casper-iitb.github.io/) with [Dr. Biswabandan Panda](https://www.cse.iitb.ac.in/~biswa/) as a Google Explore CS Research Scholar. <br /><br />
 
+>I'm currently on the lookout for PhD positions. 

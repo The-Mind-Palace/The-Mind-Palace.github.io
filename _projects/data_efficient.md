@@ -21,7 +21,7 @@ We solve these problems by storing the KV-cache in contiguous virtual memory and
 Checkout the following papers to know more:
 
 <div class="publications">
-{% bibliography -f {{ site.scholar.bibliography }} -q @*[vAttention=true]* %}
+{% bibliography -f {{ site.scholar.bibliography }} -q @*[vattention=true]* %}
 </div>
 
 

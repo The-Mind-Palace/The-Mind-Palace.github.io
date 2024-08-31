@@ -5,7 +5,7 @@ permalink: /projects/
 
 nav: true
 nav_order: 2
-display_categories: [efficiency, robustness,Systems, Systems for ML]
+display_categories: [Systems, Systems for ML]
 horizontal: false
 ---
 

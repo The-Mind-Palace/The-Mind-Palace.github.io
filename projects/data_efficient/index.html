@@ -151,10 +151,93 @@
     </div>
 </div>
 
-<p>Checkout the following papers to know more:</p>
+<p>You can try it out here:</p>
+<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
+  
+    
+
+
+
+<div class="repo p-2 text-center">
+  <a href="https://github.com/BigML-CS-UCLA/sas-data-efficient-contrastive-learning" rel="external nofollow noopener" target="_blank">
+    <img class="repo-img-light w-100" alt="BigML-CS-UCLA/sas-data-efficient-contrastive-learning" src="https://github-readme-stats.vercel.app/api/pin/?username=BigML-CS-UCLA&amp;repo=sas-data-efficient-contrastive-learning&amp;theme=default&amp;show_owner=true">
+    <img class="repo-img-dark w-100" alt="BigML-CS-UCLA/sas-data-efficient-contrastive-learning" src="https://github-readme-stats.vercel.app/api/pin/?username=BigML-CS-UCLA&amp;repo=sas-data-efficient-contrastive-learning&amp;theme=dark&amp;show_owner=true">
+  </a>
+</div>
+
+  
+    
+
+
+
+<div class="repo p-2 text-center">
+  <a href="https://github.com/BigML-CS-UCLA/EPIC" rel="external nofollow noopener" target="_blank">
+    <img class="repo-img-light w-100" alt="BigML-CS-UCLA/EPIC" src="https://github-readme-stats.vercel.app/api/pin/?username=BigML-CS-UCLA&amp;repo=EPIC&amp;theme=default&amp;show_owner=true">
+    <img class="repo-img-dark w-100" alt="BigML-CS-UCLA/EPIC" src="https://github-readme-stats.vercel.app/api/pin/?username=BigML-CS-UCLA&amp;repo=EPIC&amp;theme=dark&amp;show_owner=true">
+  </a>
+</div>
+
+  
+</div>
+
+<p>Checkout the following paper to know more:</p>
 
 <div class="publications">
-<ol class="bibliography"></ol>
+<ol class="bibliography"><li>
+<!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"><abbr class="badge">ArXiv</abbr></div>
+
+        <!-- Entry bib key -->
+        <div id="prabhu2024vattentiondynamicmemorymanagement" class="col-sm-10">
+        <!-- Title -->
+        <div class="title">vAttention: Dynamic Memory Management for Serving LLMs without PagedAttention</div>
+        <!-- Author -->
+        <div class="author">
+        
+
+        <em>Ramya Prabhu</em>, Ajay Nayak, Jayashree Mohan, Ramachandran Ramjee, and Ashish Panwar</div>
+
+        <!-- Journal/Book title and date -->
+        
+        
+        <div class="periodical">
+          <em>arXiv preprint arXiv:2405.04437</em>, Preprints
+        </div>
+        <div class="periodical">
+          
+        </div>
+
+          <!-- Links/Buttons -->
+          <div class="links">
+            <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+            <a href="http://arxiv.org/abs/2405.04437" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
+            <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
+          <!-- -->
+          </div>
+          
+          <div class="badges">
+            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
+              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
+          </div>
+
+          <!-- Hidden abstract block -->
+          <div class="abstract hidden">
+            <p>Efficient management of GPU memory is essential for high throughput LLM inference. Prior systems used to reserve KV-cache memory ahead-of-time that resulted in wasted capacity due to internal fragmentation. Inspired by demand paging, vLLM proposed PagedAttention to enable dynamic memory allocation for KV-cache. This approach eliminates fragmentation and improves serving throughout. However, to be able to allocate physical memory dynamically, PagedAttention changes the layout of KV-cache from contiguous virtual memory to non-contiguous virtual memory. As a consequence, one needs to rewrite the attention kernels to support paging, and implement a memory manager in the serving framework. This results in both performance and programming overheads, as well as portability challenges in adopting state-of-the-art attention kernels. In this paper, we propose vAttention, a new approach for dynamic KV-cache memory management. In contrast to PagedAttention, vAttention stores KV-cache in contiguous virtual memory and leverages OS support for on-demand allocation of physical memory. vAttention thus enables one to use state-of-the art attention kernels out-of-the-box by adding support for dynamic allocation of physical memory without having to re-write their code. We implement vAttention in the vLLM serving stack to show that it also helps improve decode throughput by up to 1.99x over vLLM, and the end-to-end serving throughput by up to 1.22x and 1.29x, compared to using the state-of-the-art PagedAttention based kernels of FlashAttention and FlashInfer.</p>
+          </div>
+<!-- Hidden bibtex block -->
+          <div class="bibtex hidden">
+            <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@article</span><span class="p">{</span><span class="nl">prabhu2024vattentiondynamicmemorymanagement</span><span class="p">,</span>
+  <span class="na">title</span> <span class="p">=</span> <span class="s">{vAttention: Dynamic Memory Management for Serving LLMs without PagedAttention}</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{Prabhu, Ramya and Nayak, Ajay and Mohan, Jayashree and Ramjee, Ramachandran and Panwar, Ashish}</span><span class="p">,</span>
+  <span class="na">journal</span> <span class="p">=</span> <span class="s">{arXiv preprint arXiv:2405.04437}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{Preprints}</span><span class="p">,</span>
+  <span class="na">vattention</span> <span class="p">=</span> <span class="s">{true}</span>
+<span class="p">}</span></code></pre></figure>
+          </div>
+        </div>
+      </div>
+</li></ol>
 </div>
 
 

@@ -18,7 +18,14 @@ We solve these problems by storing the KV-cache in contiguous virtual memory and
     </div>
 </div>
 
-Checkout the following papers to know more:
+You can try it out here:
+<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
+  {% for repo in site.data.repositories.github_repos %}
+    {% include repository/repo.html repository=repo %}
+  {% endfor %}
+</div>
+
+Checkout the following paper to know more:
 
 <div class="publications">
 {% bibliography -f {{ site.scholar.bibliography }} -q @*[vattention=true]* %}

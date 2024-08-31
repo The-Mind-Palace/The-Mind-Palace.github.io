@@ -9,10 +9,7 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   address: >
-    <p>Engineering VI - 397B</p>
-    <p>404 Westwood Plaza</p>
-    <p>Los Angeles, CA 90095</p>
-    <p><a href='mailto:baharan@cs.ucla.edu'>baharan@cs.ucla.edu</a></p>
+    <p><a href='mailto:ramrag0107@gmail.com'>ramrag0107@gmail.com</a></p>
 
 news: true  # includes a list of news items
 # latest_posts: true  # includes a list of the newest posts
@@ -27,4 +24,4 @@ My research interests lie in improving the efficiency of compute systems stack a
 
 Before joining MSRI, I was a research intern at the PAR Lab at [Intel Labs, Bengaluru](https://www.intel.com/content/www/us/en/research/overview.html) working with [Sreenivas Subramoney](https://www.linkedin.com/in/sreenivas-subramoney-6564521/?originalSubdomain=in) and [Anant Nori](https://www.linkedin.com/in/anant-nori-97a491152/?originalSubdomain=in). I also worked as a Research Intern at [IIT Bombay's](https://www.iitb.ac.in/) [CASPER Lab](https://casper-iitb.github.io/) with [Dr. Biswabandan Panda](https://www.cse.iitb.ac.in/~biswa/) as a Google Explore CS Research Scholar. <br /><br />
 
->I'm currently on the lookout for PhD positions. 
+>I'm currently on the lookout for PhD positions. Feel free to reach out if you think I might be a fit.

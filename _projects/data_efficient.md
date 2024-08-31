@@ -17,11 +17,11 @@ We solve these problems by storing the KV-cache in contiguous virtual memory and
         {% include figure.html path="assets/img/projects/vAttention_ss1.png" title="vAttention Allocation" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
-
+<br/>
 You can try it out here:
 <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
   {% for repo in site.data.repositories.github_repos %}
-    {% include repository/repo.html repository=repo %}
+    {% include repository/repo.html repository='microsoft/vattention' %}
   {% endfor %}
 </div>
 

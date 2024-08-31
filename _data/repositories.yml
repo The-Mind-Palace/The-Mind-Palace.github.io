@@ -11,5 +11,4 @@ github_repos:
   # - FortAwesome/Font-Awesome
   # - jpswalsh/academicons
   # - mathjax/MathJax
-  - BigML-CS-UCLA/sas-data-efficient-contrastive-learning
-  - BigML-CS-UCLA/EPIC
+  - microsoft/vattention

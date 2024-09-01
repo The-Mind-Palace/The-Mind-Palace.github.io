@@ -8,14 +8,16 @@ profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
-  address: >
-    <p><a href='mailto:ramrag0107@gmail.com'>ramrag0107@gmail.com</a></p>
+  # address: >
+  #   <p><a href='mailto:ramrag0107@gmail.com'>ramrag0107@gmail.com</a></p>
 
 news: true  # includes a list of news items
 # latest_posts: true  # includes a list of the newest posts
 # selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
+
+ramrag0107 [at] gmail [dot] com
 
 I am a [Pre-doctoral Research Fellow](https://www.microsoft.com/en-us/research/people/t-rprabhu/) at [Microsoft Research, India](https://www.microsoft.com/en-us/research/lab/microsoft-research-india/) in the [AI Infrastructure](https://www.microsoft.com/en-us/research/project/ai-infrastructure/) team with [Dr.Ramachandran Ramjee](https://www.microsoft.com/en-us/research/people/ramjee/), [Dr. Ashish Panwar](https://www.microsoft.com/en-us/research/people/ashishpanwar/) and [Dr. Jayashree Mohan](https://www.microsoft.com/en-us/research/people/jamohan/).
                     

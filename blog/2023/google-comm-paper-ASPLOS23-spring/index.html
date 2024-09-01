@@ -10,9 +10,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Which Features are Learnt by Contrastive Learning? | Ramya  Prabhu</title>
+    <title>Summary - 'Overlap Communication with Dependent Computation via Decomposition in Large Deep Learning Models' | Ramya  Prabhu</title>
     <meta name="author" content="Ramya  Prabhu">
-    <meta name="description" content="On the Role of Simplicity Bias in Class Collapse and Feature Suppression">
+    <meta name="description" content="Summarizing what I understood from ASPLOS 2023's Overlap Communication with Dependent Computation via Decomposition in Large Deep Learning Models">
     <meta name="keywords" content="systems, optimization, systems for ML">
 
 
@@ -38,7 +38,7 @@
     <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%8F%B0&lt;/text&gt;&lt;/svg&gt;">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://the-mind-palace.github.io//blog/2023/CC-FS/">
+    <link rel="canonical" href="https://the-mind-palace.github.io//blog/2023/google-comm-paper-ASPLOS23-spring/">
 
     <!-- Dark Mode -->
     
@@ -125,15 +125,13 @@
 <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Which Features are Learnt by Contrastive Learning?</h1>
-    <p class="post-meta">June 8, 2023</p>
+    <h1 class="post-title">Summary - 'Overlap Communication with Dependent Computation via Decomposition in Large Deep Learning Models'</h1>
+    <p class="post-meta">October 25, 2023</p>
     <p class="post-tags">
       <a href="/blog/2023"> <i class="fas fa-calendar fa-sm"></i> 2023 </a>
         ·  
-        <a href="/blog/category/contrastive-learning">
-          <i class="fas fa-tag fa-sm"></i> contrastive-learning</a>  
-          <a href="/blog/category/simplicity-bias">
-          <i class="fas fa-tag fa-sm"></i> simplicity-bias</a>  
+        <a href="/blog/category/systems-for-ml">
+          <i class="fas fa-tag fa-sm"></i> systems-for-ml</a>  
           
 
     </p>
@@ -142,134 +140,112 @@
   <article class="post-content">
     
     <div id="markdown-content">
-      <p>Contrastive learning (CL) has emerged as a powerful technique for representation learning, with or without label supervision. However, supervised CL is prone to collapsing representations of subclasses within a class by not capturing all their features, and unsupervised CL may suppress harder class-relevant features by focusing on learning easy class-irrelevant features; both significantly compromise representation quality. Yet, there is no theoretical understanding of class collapse or feature suppression at test time. We provide the first unified theoretically rigorous framework to determine which features are learnt by CL. Our analysis indicate that, perhaps surprisingly, bias of (stochastic) gradient descent towards finding simpler solutions is a key factor in collapsing subclass representations and suppressing harder class-relevant features. Moreover, we present increasing embedding dimensionality and improving the quality of data augmentations as two theoretically motivated solutions to feature suppression. We also provide the first theoretical explanation for why, when supervised and unsupervised CL are employed together, higher-quality representations are obtained, even using commonly-used stochastic gradient methods.</p>
+      <p><strong><em>Basic Idea</em></strong>  Overlap dependent communications and computations by starting compute on the half of compute inpute that has already been communicated</p>
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        <figure>
+<h2 id="motivation">Motivation</h2>
 
-  <picture>
-    
+<p><img src="../images/google_comm_paper_ASPLOS23/image.png" alt="Alt text"></p>
 
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/blog/example_cc_fs.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example_cc_fs" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+<p>LLMs require large on device memory. But memory capacity of a Single GPU or TPU is very limited.
+To solve this people usually resort to intra-layer model parallelism. But this requires data communication across devices. And this communication contributes to a significant portion of the total execution time and severely hurts the compute efficiency.</p>
 
-  </picture>
+<p>The sequential behaviour of most deep learning models make it hard to overlap comm and compute that 
+have data dependence.</p>
 
-</figure>
+<h2 id="prior-solutions">Prior Solutions</h2>
 
-    </div>
-</div>
+<p>Applied various loop analysis and transformation techniques (such as loop fission, interchange, tiling, pipelining, strip-mining) to extract loops that only contain independent communication</p>
 
-<h2> Main Results </h2>
+<h2 id="proposed--solution">Proposed  Solution</h2>
 
-<h3> Class Collapse </h3>
+<p>The proposed solution uncovers opportunities for dependent communication compute overlap.  The original communication collective is decomposed into sequence of fine grained comm operations along with the dependent computation operation,[how fine grained? The data to be communicated and computed on is sharded]. It then proposes that these ops directly start working on each shard individually instead of waiting for all the units of the data are ready. It makes sure that there is never any data dependency violation.</p>
 
-<hr>
+<p>In order to enable this, a new instruction scheduling scheme is proposed to asynchronously execute the decomposed collectives in parallel with the corresponding finer-grained computation ops in an iterative way</p>
+
+<p>A cost model is also in place to assess the trade-offs of employing this optimization and automatically enables/disables it based on net benefits</p>
+
+<p>The entire implementation is done on XLA, a TPU based ML compiler</p>
+
+<h2 id="what-does-communication-mean-here">What does communication mean here?</h2>
+
+<p>On a GPU, TP implementation normally looks like the following:</p>
+
+<p><img src="../images/google_comm_paper_ASPLOS23/image-1.png" alt="Alt text"></p>
+
+<p>Here, f and g are conjugate. f is an identity operator in the forward pass and all reduce in the backward pass while g is an all reduce in the forward pass and identity in the backward pass.</p>
+
+<p>This paper goes one step further and shards the activations and the weights. And construct them on demand using collective primitives.</p>
+
+<p><img src="../images/google_comm_paper_ASPLOS23/image-2.png" alt="Alt text"></p>
+
+<p>Usually, usually the AllGather(y) X 2 is not required. Einsum here is just to imply matmul which is the primary operation of a linear layer</p>
+
+<h3 id="communication-primitive">Communication Primitive</h3>
+
+<p>• AllGather has a many-to-many communication pattern that each logical device partition receives data from all of the partitions and concatenate them based on the data Partition IDs. It is mostly applied to replicate data along partitioned dimensions
+A good way to understand this is:</p>
+
+<p><img src="../images/google_comm_paper_ASPLOS23/image-3.png" alt="Alt text"></p>
+
+<p>• Reduce Scatter  has a reverse communication pattern of AllGather. Each logical device partition performs element-wise reduction over the received data partitions with the same Partition ID.</p>
+
+<p>• AllReduce can be considered as a ReduceScatter followed by an AllGather. After the operation, each logical device partition has the same tensor value from element-wise reduction over all of the data inputs, each of which comes from a different logical device partition.</p>
+
+<p><img src="../images/google_comm_paper_ASPLOS23/image-4.png" alt="Alt text"></p>
+
+<p>[why Reduce Scatter + All Gather and not reduce + broadcast?. After a reduce, only one GPU [the root] has all the data. No einsum can start on the other ranks until the broadcast in which case the GPU is idle and there is no overlap to be had]</p>
+
+<h2 id="what-does-deconstructed-communication-workflow-look-like">What does deconstructed communication workflow look like?</h2>
+
+<p><img src="../images/google_comm_paper_ASPLOS23/image-5.png" alt="Alt text"></p>
+
+<p>Similarly,</p>
+
+<p><img src="../images/google_comm_paper_ASPLOS23/image-6.png" alt="Alt text"></p>
+
+<p>C0 (the addition of C00 and C01) and C1 (the addition of C10 and C11)
+are respectively the result shard of C after ReduceScatter on Partition 0 and Partition 1.</p>
+
+<p>As the data communication is performed on the computation result, in this case, each device needs to asynchronously transfer the accumulation result shard rather than the
+operand shard.</p>
+
+<p>The accumulation result shard is initialized with zeros on each device. At the beginning of each iteration, each device asynchronously send the accumulation result shard (e.g., C0 and C1 on Partition 0 and Partition 1, respectively, in the first iteration) to the other device, and start executing the partial Einsum in parallel with the data transfer. [why communicate 0s? it’s wasted work :( ]</p>
+
+<p>When the computation finishes, the partial
+result is added to the received accumulation result shard at theend of the iteration (e.g., C1 += C10 and C0 += C01 on Partition 0
+and Partition 1, respectively, in the first iteration).</p>
+
+<p>But what is the overhead of overlapping communication and compute?</p>
+
+<p><img src="../images/google_comm_paper_ASPLOS23/image-7.png" alt="Alt text"></p>
+
+<p>What happens to the compute time? Don’t know, TBD</p>
+
+<h3 id="some-resources">Some Resources</h3>
 
 <ol>
-  <li>Not all minimizers of the SCL loss exhibit CC, but the minimum norm minimizer does. The key insight is that due to high dimensionality of the model, it has the capacity to minimize the training loss in various ways. While minimizing the training loss implies CC on the training data, it does not necessarily imply CC on the test data. The first figure provides a simplified example illustrating a model that exhibits CC on the training data but not on the test data. This occurs because the model can exploit the specific input noise present in the training data to counteract the subclass information in the embeddings, while this input noise is rarely encountered in the overall distribution due to high dimensionality. The second figure illustrates that the minimum norm minimizer does not align with the subclass feature at all.</li>
+  <li>
+    <p><a href="https://dl.acm.org/doi/pdf/10.1145/3567955.3567959" rel="external nofollow noopener" target="_blank">Overlap Communication with Dependent Computation via Decomposition in Large Deep Learning Models, Proceedings of the 28th ACM International Conference on Architectural Support for Programming Languages and Operating Systems, Volume 1</a></p>
+  </li>
+  <li>
+    <p><a href="https://youtu.be/38TcJ9WE6vU" rel="external nofollow noopener" target="_blank">Lightening Talk at ASPLOS23</a></p>
+  </li>
 </ol>
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        <figure>
+<h2 id="references">References</h2>
 
-  <picture>
-    
+<p>[1]  <a href="https://dl.acm.org/doi/pdf/10.1145/3567955.3567959" rel="external nofollow noopener" target="_blank">Overlap Communication with Dependent Computation via Decomposition in Large Deep Learning Models, Proceedings of the 28th ACM International Conference on Architectural Support for Programming Languages and Operating Systems, Volume 1</a></p>
 
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/blog/not_all.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="not_all" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+<p>[2]  <a href="https://stackoverflow.com/questions/15049190/difference-between-mpi-allgather-and-mpi-alltoall-functions" rel="external nofollow noopener" target="_blank">mpi - Difference between MPI_Allgather and MPI_Alltoall functions? - Stack Overflow</a></p>
 
-  </picture>
+<p>[3]  <a href="https://arxiv.org/pdf/1909.08053.pdf" rel="external nofollow noopener" target="_blank">Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism (arxiv.org)</a></p>
 
-</figure>
+<p>[4]  <a href="https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/usage/operations.html#reduce" rel="external nofollow noopener" target="_blank">Operations — NCCL 2.6.4 documentation (nvidia.com)</a></p>
 
-    </div>
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        <figure>
-
-  <picture>
-    
-
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/blog/fs.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="feature suppression" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
-
-  </picture>
-
-</figure>
-
-    </div>
-</div>
-
-<ol>
-  <li>In SCL, subclasses are learned by (S)GD early in training but unlearned later. The first part is supported by both theoretical and empirical results and the second part is supported by empirical results. The theoretical characterization of the unlearning process remains an important direction for future research. This observation, in conjunction with the previous point (1), prompts us to conjecture that the bias of (S)GD towards simpler solutions, such as the minimum norm solution, leads to the unlearning of subclasses and ultimately results in class collapse (CC).</li>
-</ol>
-
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        <figure>
-
-  <picture>
-    
-
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/blog/cc.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="class collapse" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
-
-  </picture>
-
-</figure>
-
-    </div>
-</div>
-
-<h3> Feature Suppresion </h3>
-<hr>
-<p>In UCL, with the min norm inductive bias, we characeterize two scenarios where FS can happen. (a) When there are easy and irrelevant features present, and the embedding size is limited, the model is unable to accommodate all the information from the input space into the embeddings. As a result, it selectively captures only the easiest features, disregarding the harder class-relevant ones. This suggests increasing embedding size as a solution which we validated through experiments. (b) Even with arbitrarily large embedding sizes, FS can still occur in the presence of high-dimensional irrelevant features and the use of imperfect data augmentation that preserves those features. This emphasizes the importance of designing better data augmentation strategy.</p>
-
-<h3> Joint Loss </h3>
-<hr>
-<p>We also theotretically justify using a weighted sum of SCL and UCL losses, showing that it can provably avoid both CC and FS. This result sheds light on the empirical observation of improved performance when joint loss is used.</p>
-
-<h4> BibTeX </h4>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@article{xue2023features,
-  title={Which Features are Learned by Contrastive Learning? On the Role of Simplicity Bias in Class Collapse and Feature Suppression},
-  author={Xue, Yihao and Joshi, Siddharth and Gan, Eric and Chen, Pin-Yu and Mirzasoleiman, Baharan},
-  journal={International Conference on Machine Learning (ICML)},
-  year={2023}
-}
-</code></pre></div></div>
-
+<p>[5] <a href="https://arxiv.org/pdf/2006.03318.pdf" rel="external nofollow noopener" target="_blank">Daydream: Accurately Estimating the Efficacy of Optimizations for DNN Training</a></p>
 
     </div>
   </article>
-
-
-  
-    
-    <br>
-    <hr>
-    <br>
-    <ul class="list-disc pl-8"></ul>
-
-    <!-- Adds related posts to the end of an article -->
-    <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2>
-    <p class="mb-2">Here are some more articles you might like to read next:</p>
-  
-
-  <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/crest/">Coresets for Data-efficient Deep Learning</a>
-  </li>
-
-  
-
-  <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/data-CL/">Data-Efficient Contrastive Self-supervised Learning</a>
-  </li>
-
 </div>
 
       

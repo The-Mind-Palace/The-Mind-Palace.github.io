@@ -10,9 +10,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Data-Efficient Contrastive Self-supervised Learning | Ramya  Prabhu</title>
+    <title>systems-for-ml | Ramya  Prabhu</title>
     <meta name="author" content="Ramya  Prabhu">
-    <meta name="description" content="Most Beneficial Examples for Supervised Learning Contribute the Least">
+    <meta name="description" content="">
     <meta name="keywords" content="systems, optimization, systems for ML">
 
 
@@ -38,7 +38,7 @@
     <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%8F%B0&lt;/text&gt;&lt;/svg&gt;">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://the-mind-palace.github.io//blog/2023/data-CL/">
+    <link rel="canonical" href="https://the-mind-palace.github.io//blog/category/systems-for-ml/">
 
     <!-- Dark Mode -->
     
@@ -120,106 +120,34 @@
     <!-- Content -->
     <div class="container mt-5">
       
-        <!-- _layouts/post.html -->
-
-<div class="post">
+        <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Data-Efficient Contrastive Self-supervised Learning</h1>
-    <p class="post-meta">May 13, 2023</p>
-    <p class="post-tags">
-      <a href="/blog/2023"> <i class="fas fa-calendar fa-sm"></i> 2023 </a>
-        ·  
-        <a href="/blog/category/data-efficiency">
-          <i class="fas fa-tag fa-sm"></i> data-efficiency</a>  
-          <a href="/blog/category/contrastive-learning">
-          <i class="fas fa-tag fa-sm"></i> contrastive-learning</a>  
-          
-
-    </p>
+    <h1 class="post-title"> <i class="fas fa-tag fa-sm"></i> systems-for-ml </h1>
+    <p class="post-description"> an archive of posts in this category </p>
   </header>
 
-  <article class="post-content">
-    
-    <div id="markdown-content">
-      <p>Self-supervised learning (SSL) learns high-quality representations from large pools of unlabeled training data. As datasets grow larger, it becomes crucial to identify the examples that contribute the most to learning such representations. This enables efficient SSL by reducing the volume of data required for learning high-quality representations. Nevertheless, quantifying the value of examples for SSL has remained an open question. In this work, we address this for the first time, by proving that examples that contribute the most to contrastive SSL are those that have the most similar augmentations to other examples, in expectation. We provide rigorous guarantees for the generalization performance of SSL on such subsets. Empirically, we discover, perhaps surprisingly, the subsets that contribute the most to SSL are those that contribute the least to supervised learning. Through extensive experiments, we show we can safely exclude 20% of examples from CIFAR100 and 40% from STL10 and TinyImageNet, without affecting downstream task performance. We also show that our subsets outperform random subsets by more than 2% on CIFAR10. We also demonstrate that these subsets are effective across contrastive SSL methods (evaluated on SimCLR, MoCo, SimSiam, BYOL).</p>
-
-<h2>Highlights</h2>
-<h3>New Problem</h3>
-<hr>
-<p>Previous work has studied data-efficiency for supervised learning and shown that nearly 30% of examples can be discarded on many datasets without sacrificing accuracy. However, this problem has not been studied for self-supervised learning. Our paper proposes the first empirical and theoretical method for data-efficient contrastive learning. We show that across various datasets (CIFAR100, STL10 and TinyImageNet), our method allows you to discard 20-40% of examples without affecting downstream classification accuracy.</p>
-
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        <figure>
-
-  <picture>
-    
-
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/blog/discard-pct.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="discard-pct" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
-
-  </picture>
-
-</figure>
-
-    </div>
-</div>
-
-<h3>Theoretical Guarantees for Downstream Accuracy</h3>
-<hr>
-<p>We use [Huang et al. 2023] theoretical characterization of contrastive learning using alignment and divergence of class centers to show that the subset we choose preserves alignment and divergence of class centers and thus preserves downstream accuracy.</p>
-
-<h4> BibTeX </h4>
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@article{joshi2023dataefficient,
-    title={Data-Efficient Contrastive Self-supervised Learning: Most Beneficial Examples for Supervised Learning Contribute the Least},
-    author={Joshi, Siddharth and Mirzasoleiman, Baharan},
-    journal={International Conference on Machine Learning (ICML)},
-    year={2023}
-}
-</code></pre></div></div>
-
-<h4> Code </h4>
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  
-
-
-
-<div class="repo p-2 text-center">
-  <a href="https://github.com/BigML-CS-UCLA/sas-data-efficient-contrastive-learning" rel="external nofollow noopener" target="_blank">
-    <img class="repo-img-light w-100" alt="BigML-CS-UCLA/sas-data-efficient-contrastive-learning" src="https://github-readme-stats.vercel.app/api/pin/?username=BigML-CS-UCLA&amp;repo=sas-data-efficient-contrastive-learning&amp;theme=default&amp;show_owner=true">
-    <img class="repo-img-dark w-100" alt="BigML-CS-UCLA/sas-data-efficient-contrastive-learning" src="https://github-readme-stats.vercel.app/api/pin/?username=BigML-CS-UCLA&amp;repo=sas-data-efficient-contrastive-learning&amp;theme=dark&amp;show_owner=true">
-  </a>
-</div>
-
-</div>
-
-
+  <article>
+    <div class="table-responsive">
+      <table class="table table-sm table-borderless">
+        
+        <tr>
+          <th scope="row">Oct 25, 2023</th>
+          <td>
+              <a class="post-link" href="/blog/2023/google-comm-paper-ASPLOS23-spring/">Summary - 'Overlap Communication with Dependent Computation via Decomposition in Large Deep Learning Models'</a>
+          </td>
+        </tr>
+      
+        <tr>
+          <th scope="row">Oct 24, 2023</th>
+          <td>
+              <a class="post-link" href="/blog/2023/Intro-to-CUDA-Graphs/">What are CUDA Graphs?</a>
+          </td>
+        </tr>
+      
+      </table>
     </div>
   </article>
-
-
-  
-    
-    <br>
-    <hr>
-    <br>
-    <ul class="list-disc pl-8"></ul>
-
-    <!-- Adds related posts to the end of an article -->
-    <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2>
-    <p class="mb-2">Here are some more articles you might like to read next:</p>
-  
-
-  <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/crest/">Coresets for Data-efficient Deep Learning</a>
-  </li>
-
-  
-
-  <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/CC-FS/">Which Features are Learnt by Contrastive Learning?</a>
-  </li>
 
 </div>
 

@@ -11,9 +11,18 @@
   title={vAttention: Dynamic Memory Management for Serving LLMs without PagedAttention},
   abstract={Efficient management of GPU memory is essential for high throughput LLM inference. Prior systems used to reserve KV-cache memory ahead-of-time that resulted in wasted capacity due to internal fragmentation. Inspired by demand paging, vLLM proposed PagedAttention to enable dynamic memory allocation for KV-cache. This approach eliminates fragmentation and improves serving throughout. However, to be able to allocate physical memory dynamically, PagedAttention changes the layout of KV-cache from contiguous virtual memory to non-contiguous virtual memory. As a consequence, one needs to rewrite the attention kernels to support paging, and implement a memory manager in the serving framework. This results in both performance and programming overheads, as well as portability challenges in adopting state-of-the-art attention kernels. In this paper, we propose vAttention, a new approach for dynamic KV-cache memory management. In contrast to PagedAttention, vAttention stores KV-cache in contiguous virtual memory and leverages OS support for on-demand allocation of physical memory. vAttention thus enables one to use state-of-the art attention kernels out-of-the-box by adding support for dynamic allocation of physical memory without having to re-write their code. We implement vAttention in the vLLM serving stack to show that it also helps improve decode throughput by up to 1.99x over vLLM, and the end-to-end serving throughput by up to 1.22x and 1.29x, compared to using the state-of-the-art PagedAttention based kernels of FlashAttention and FlashInfer.},
   author={Prabhu, Ramya and Nayak, Ajay and Mohan, Jayashree and Ramjee, Ramachandran and Panwar, Ashish},
-  journal={arXiv preprint arXiv:2405.04437},
+  journal={ACM International Conference on Architectural Support for Programming Languages and Operating Systems 2025},
   arxiv={2405.04437},
-  year={Preprints},
+  year={2024},
   vattention={true}
 }
 
+@article{kamath2024pod,
+  bibtex_show={true},
+  abbr={ArXiv},
+  title={POD-Attention: Unlocking Full Prefill-Decode Overlap for Faster LLM Inference},
+  abstract={Each request in LLM inference goes through two phases: compute-bound prefill and memory-bandwidth-bound decode. To improve GPU utilization, recent systems use hybrid batching that combines the prefill and decode phases of different requests into the same batch. Hybrid batching works well for linear operations as it amortizes the cost of loading model weights from HBM. However, attention computation in hybrid batches remains inefficient because existing attention kernels are optimized for either prefill or decode. In this paper, we present POD-Attention -- the first GPU kernel that efficiently computes attention for hybrid batches. POD-Attention aims to maximize the utilization of both compute and memory bandwidth by carefully allocating the GPU's resources such that prefill and decode operations happen concurrently on the same multiprocessor. We integrate POD-Attention in a state-of-the-art LLM inference scheduler Sarathi-Serve. POD-Attention speeds up attention computation by up to 75% (mean 28%) and increases LLM serving throughput by up to 22% in offline inference. In online inference, POD-Attention enables lower time-to-first-token (TTFT), time-between-tokens (TBT), and request execution latency versus Sarathi-Serve.}
+  author={Kamath, Aditya K and Prabhu, Ramya and Mohan, Jayashree and Peter, Simon and Ramjee, Ramachandran and Panwar, Ashish},
+  journal={arXiv preprint arXiv:2410.18038},
+  year={2024}
+}

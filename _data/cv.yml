@@ -15,7 +15,7 @@
       institution: PES University, Bengaluru
       year: 2023
       description:
-        - BTech in Computer Science, GPA - 8.98/10.00
+        - BTech in Computer Science, GPA - 8.97/10.00
         - title: Relevant Courses
           contents:
             - System Performance and Profiling.
@@ -47,6 +47,9 @@
     - title: <a href="https://github.com/microsoft/vattention">vAttention</a>
       year: 2024-now
       description: Dynamic Memory Management for Serving LLMs without PagedAttention.
+    - title: <a href="https://github.com/microsoft/vattention/tree/main/pod_attn">POD-Attention</a>
+      year: 2024-now
+      description: Fusing Prefill and Decode attention to saturate resource utilisation in a hybrid batch
 
 - title: Honors and Awards
   type: time_table
